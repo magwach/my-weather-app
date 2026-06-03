@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 
+	_ "github.com/golang-migrate/migrate/v4/source/file"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
