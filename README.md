@@ -1,4 +1,4 @@
-# Nimbus — Weather Dashboard
+# Weather Dashboard
 
 A full-stack weather application built with Go and Next.js. Search for weather by city or use your current location, view 5-day forecasts, and save up to 3 favourite cities.
 
@@ -56,8 +56,10 @@ Fill in the values:
 ```env
 PORT=8080
 DATABASE_URL=postgres://user:password@localhost:5432/weather_app
+TEST_DATABASE_URL=postgres://user:password@localhost:5432/weather_app_test
 REDIS_URL=redis://localhost:6379
-JWT_SECRET=your_secret_key_here
+TEST_REDIS_URL=redis://localhost:6379
+JWT_SECRET=your_super_secret_key_here
 OPENWEATHER_API_KEY=your_openweather_key_here
 CLIENT_URL=http://localhost:3000
 ```
@@ -89,28 +91,14 @@ go test ./tests/... -v
 
 ## Frontend Setup
 
-### 1. Environment Variables
-
-Copy `.env.local.example` to `.env.local` inside the `frontend/` folder:
-
-```bash
-cp frontend/.env.local.example frontend/.env.local
-```
-
-Fill in the values:
-
-```env
-NEXT_PUBLIC_API_URL=http://localhost:8080/api
-```
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 
 ```bash
 cd frontend
 npm install
 ```
 
-### 3. Start the Frontend
+### 2. Start the Frontend
 
 ```bash
 npm run dev
@@ -166,4 +154,4 @@ All protected endpoints require `Authorization: Bearer <token>` header.
 
 ## Postman Collection
 
-Import `weather-app.postman_collection.json` and `weather-app.postman_environment.json` from the repo root into Postman. Set `base_url` to `http://localhost:8080` and run Login to auto-populate the `token` variable.
+Import `weather-app.postman_collection.json` from the repo root into Postman. Set `BASE_URL_WEATHER_APP` to `http://localhost:8080/api` and run Login to auto-populate the `token` variable.
