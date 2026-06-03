@@ -14,7 +14,6 @@ func NewWeatherHandler(s *services.WeatherService) *WeatherHandler {
 	return &WeatherHandler{Service: s}
 }
 
-
 func (h *WeatherHandler) GetCurrentWeather(c *fiber.Ctx) error {
 
 	city := c.Params("city")
@@ -48,7 +47,6 @@ func (h *WeatherHandler) GetCurrentWeather(c *fiber.Ctx) error {
 	return c.JSON(result)
 }
 
-
 func (h *WeatherHandler) GetForecast(c *fiber.Ctx) error {
 
 	city := c.Params("city")
@@ -76,6 +74,48 @@ func (h *WeatherHandler) GetForecast(c *fiber.Ctx) error {
 
 		return c.Status(500).JSON(fiber.Map{
 			"error": "internal server error",
+		})
+	}
+
+	return c.JSON(result)
+}
+
+func (h *WeatherHandler) GetCurrentWeatherByCoords(c *fiber.Ctx) error {
+
+	lat := c.Query("lat")
+	lon := c.Query("lon")
+
+	if lat == "" || lon == "" {
+		return c.Status(400).JSON(fiber.Map{
+			"error": "lat and lon are required",
+		})
+	}
+
+	result, err := h.Service.GetCurrentWeatherByCoords(lat, lon)
+	if err != nil {
+		return c.Status(500).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	return c.JSON(result)
+}
+
+func (h *WeatherHandler) GetForecastByCoords(c *fiber.Ctx) error {
+
+	lat := c.Query("lat")
+	lon := c.Query("lon")
+
+	if lat == "" || lon == "" {
+		return c.Status(400).JSON(fiber.Map{
+			"error": "lat and lon are required",
+		})
+	}
+
+	result, err := h.Service.GetForecastByCoords(lat, lon)
+	if err != nil {
+		return c.Status(500).JSON(fiber.Map{
+			"error": err.Error(),
 		})
 	}
 

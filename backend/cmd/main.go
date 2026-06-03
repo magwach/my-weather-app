@@ -74,6 +74,9 @@ func main() {
 
 	protected := api.Use(middlewares.AuthMiddleware)
 
+	protected.Get("/weather/coords", weatherHandler.GetCurrentWeatherByCoords)
+	protected.Get("/forecast/coords", weatherHandler.GetForecastByCoords)
+
 	protected.Get("/weather/:city", weatherHandler.GetCurrentWeather)
 	protected.Get("/forecast/:city", weatherHandler.GetForecast)
 

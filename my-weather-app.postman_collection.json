@@ -577,6 +577,185 @@
 							"body": "{\n    \"City\": \"Kilifi\",\n    \"Days\": [\n        {\n            \"Date\": \"2026-06-03\",\n            \"High\": 25.46,\n            \"Low\": 24.09,\n            \"Condition\": \"broken clouds\"\n        },\n        {\n            \"Date\": \"2026-06-04\",\n            \"High\": 28.78,\n            \"Low\": 23.43,\n            \"Condition\": \"overcast clouds\"\n        },\n        {\n            \"Date\": \"2026-06-05\",\n            \"High\": 28.03,\n            \"Low\": 23.47,\n            \"Condition\": \"light rain\"\n        },\n        {\n            \"Date\": \"2026-06-06\",\n            \"High\": 28.79,\n            \"Low\": 24,\n            \"Condition\": \"clear sky\"\n        },\n        {\n            \"Date\": \"2026-06-07\",\n            \"High\": 28.55,\n            \"Low\": 23.83,\n            \"Condition\": \"broken clouds\"\n        },\n        {\n            \"Date\": \"2026-06-08\",\n            \"High\": 28.35,\n            \"Low\": 24.05,\n            \"Condition\": \"scattered clouds\"\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "get_weather_by_coords",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODA1Nzg0NzUsImlhdCI6MTc4MDQ5MjA3NSwidXNlcl9pZCI6ImYzMWFmZDA0LWI5MTMtNGJiZC1hNzUwLTFjYTI3Y2JlZjFhNSJ9.0R49Dq7uNu5jaFpU_821e0N-qmasifGZArZT0kxfVM0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"city\": \"kigali\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL_WEATHER_APP}}/weather/coords?lat=-1.28&lon=36.82",
+							"host": [
+								"{{BASE_URL_WEATHER_APP}}"
+							],
+							"path": [
+								"weather",
+								"coords"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "-1.28"
+								},
+								{
+									"key": "lon",
+									"value": "36.82"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_weather_by_coords",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"city\": \"kigali\"\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL_WEATHER_APP}}/weather/coords?lat=-1.28&lon=36.82",
+									"host": [
+										"{{BASE_URL_WEATHER_APP}}"
+									],
+									"path": [
+										"weather",
+										"coords"
+									],
+									"query": [
+										{
+											"key": "lat",
+											"value": "-1.28"
+										},
+										{
+											"key": "lon",
+											"value": "36.82"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jun 2026 16:14:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"City\": \"Nairobi\",\n    \"Temperature\": 16.9,\n    \"Condition\": \"overcast clouds\",\n    \"Humidity\": 89,\n    \"WindSpeed\": 2.88\n}"
+						}
+					]
+				},
+				{
+					"name": "get_forecast_by_coords",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_WEATHER_APP}}/forecast/coords?lat=-1.28&lon=36.82",
+							"host": [
+								"{{BASE_URL_WEATHER_APP}}"
+							],
+							"path": [
+								"forecast",
+								"coords"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "-1.28"
+								},
+								{
+									"key": "lon",
+									"value": "36.82"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_forecast_by_coords",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_WEATHER_APP}}/forecast/coords?lat=-1.28&lon=36.82",
+									"host": [
+										"{{BASE_URL_WEATHER_APP}}"
+									],
+									"path": [
+										"forecast",
+										"coords"
+									],
+									"query": [
+										{
+											"key": "lat",
+											"value": "-1.28"
+										},
+										{
+											"key": "lon",
+											"value": "36.82"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jun 2026 16:15:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "468"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"City\": \"Nairobi\",\n    \"Days\": [\n        {\n            \"Date\": \"2026-06-08\",\n            \"High\": 23.98,\n            \"Low\": 13.12,\n            \"Condition\": \"few clouds\"\n        },\n        {\n            \"Date\": \"2026-06-03\",\n            \"High\": 17.56,\n            \"Low\": 15.69,\n            \"Condition\": \"light rain\"\n        },\n        {\n            \"Date\": \"2026-06-04\",\n            \"High\": 22.32,\n            \"Low\": 13.69,\n            \"Condition\": \"light rain\"\n        },\n        {\n            \"Date\": \"2026-06-05\",\n            \"High\": 21.86,\n            \"Low\": 13.57,\n            \"Condition\": \"light rain\"\n        },\n        {\n            \"Date\": \"2026-06-06\",\n            \"High\": 24.17,\n            \"Low\": 14.89,\n            \"Condition\": \"scattered clouds\"\n        },\n        {\n            \"Date\": \"2026-06-07\",\n            \"High\": 23.56,\n            \"Low\": 13.31,\n            \"Condition\": \"broken clouds\"\n        }\n    ]\n}"
+						}
+					]
 				}
 			]
 		}
