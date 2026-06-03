@@ -20,3 +20,8 @@ type Forecast struct {
 	Days []ForecastDay
 }
 
+
+type FavoriteWithWeather struct {
+    City    string         `json:"city"`
+    Weather *CurrentWeather `json:"weather"`
+}

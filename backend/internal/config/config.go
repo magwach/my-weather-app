@@ -10,11 +10,15 @@ import (
 type Config struct {
 	DatabaseUrl       string
 	RedisUrl          string
-	JwtSecret         string
+	JwtSecret         []byte
 	OpenWeatherApiKey string
 	Port              string
 	ClientUrl         string
 }
+
+var (
+	JwtSecret []byte
+)
 
 func Load() *Config {
 
@@ -40,9 +44,9 @@ func Load() *Config {
 		log.Fatal("DATABASE_URL is not set")
 	}
 
-	JwtSecret := os.Getenv("JWT_SECRET")
+	JwtSecret = []byte(os.Getenv("JWT_SECRET"))
 
-	if JwtSecret == "" {
+	if JwtSecret == nil {
 		log.Fatal("JWT_SECRET is not set")
 	}
 

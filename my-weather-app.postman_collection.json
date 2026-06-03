@@ -1,0 +1,624 @@
+{
+	"info": {
+		"_postman_id": "532373ff-1321-41ef-a870-775b8ca9c2b7",
+		"name": "my-weather-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43541302",
+		"_collection_link": "https://emmanuelmagothe.postman.co/workspace/mern-crash-course~a232f918-5740-4983-893b-64f400c0427c/collection/43541302-532373ff-1321-41ef-a870-775b8ca9c2b7?action=share&source=collection_link&creator=43541302"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json();",
+									"pm.environment.set(\"token\", res.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"a@g.com\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_WEATHER_APP}}/auth/login",
+							"host": [
+								"{{BASE_URL_WEATHER_APP}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"a@g.com\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_WEATHER_APP}}/auth/login",
+									"host": [
+										"{{BASE_URL_WEATHER_APP}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jun 2026 15:31:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "223"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Ratelimit-Limit",
+									"value": "10"
+								},
+								{
+									"key": "X-Ratelimit-Remaining",
+									"value": "8"
+								},
+								{
+									"key": "X-Ratelimit-Reset",
+									"value": "22"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODA1ODcwODQsImlhdCI6MTc4MDUwMDY4NCwidXNlcl9pZCI6IjdjMjllOTUzLWFmOWQtNGJlNS05Mjg0LTExMmQ0NDlmMmVkZiJ9.STWzzW5V0wSJ3oX8ZcONg3LAXukoVJVfKR9MycLwrFs\",\n    \"name\": \"Emmanuel\"\n}"
+						}
+					]
+				},
+				{
+					"name": "register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const res = pm.response.json();",
+									"pm.environment.set(\"token\", res.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Emmanuel\",\n    \"email\": \"a@g.com\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_WEATHER_APP}}/auth/register",
+							"host": [
+								"{{BASE_URL_WEATHER_APP}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Emmanuel\",\n    \"email\": \"a@g.com\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_WEATHER_APP}}/auth/register",
+									"host": [
+										"{{BASE_URL_WEATHER_APP}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jun 2026 15:30:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "223"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Ratelimit-Limit",
+									"value": "10"
+								},
+								{
+									"key": "X-Ratelimit-Remaining",
+									"value": "9"
+								},
+								{
+									"key": "X-Ratelimit-Reset",
+									"value": "60"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODA1ODcwNDUsImlhdCI6MTc4MDUwMDY0NSwidXNlcl9pZCI6IjdjMjllOTUzLWFmOWQtNGJlNS05Mjg0LTExMmQ0NDlmMmVkZiJ9.ovxP-w6edpWWoMssvIr3ihC7Wi1btuYdWAJGJgNhSMQ\",\n    \"name\": \"Emmanuel\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "favorites",
+			"item": [
+				{
+					"name": "get_favorites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODA1Nzg0NzUsImlhdCI6MTc4MDQ5MjA3NSwidXNlcl9pZCI6ImYzMWFmZDA0LWI5MTMtNGJiZC1hNzUwLTFjYTI3Y2JlZjFhNSJ9.0R49Dq7uNu5jaFpU_821e0N-qmasifGZArZT0kxfVM0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_WEATHER_APP}}/favorites",
+							"host": [
+								"{{BASE_URL_WEATHER_APP}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_favorites",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_WEATHER_APP}}/favorites",
+									"host": [
+										"{{BASE_URL_WEATHER_APP}}"
+									],
+									"path": [
+										"favorites"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jun 2026 15:39:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "380"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"city\": \"nyeri\",\n        \"weather\": {\n            \"City\": \"Nyeri\",\n            \"Temperature\": 15.69,\n            \"Condition\": \"overcast clouds\",\n            \"Humidity\": 94,\n            \"WindSpeed\": 1.95\n        }\n    },\n    {\n        \"city\": \"nakuru\",\n        \"weather\": {\n            \"City\": \"Nakuru\",\n            \"Temperature\": 16.42,\n            \"Condition\": \"broken clouds\",\n            \"Humidity\": 92,\n            \"WindSpeed\": 1.63\n        }\n    },\n    {\n        \"city\": \"nairobi\",\n        \"weather\": {\n            \"City\": \"Nairobi\",\n            \"Temperature\": 18.02,\n            \"Condition\": \"overcast clouds\",\n            \"Humidity\": 85,\n            \"WindSpeed\": 3.08\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "add_favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODA1Nzg0NzUsImlhdCI6MTc4MDQ5MjA3NSwidXNlcl9pZCI6ImYzMWFmZDA0LWI5MTMtNGJiZC1hNzUwLTFjYTI3Y2JlZjFhNSJ9.0R49Dq7uNu5jaFpU_821e0N-qmasifGZArZT0kxfVM0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"city\": \"kigali\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_WEATHER_APP}}/favorites",
+							"host": [
+								"{{BASE_URL_WEATHER_APP}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODA1Nzg0NzUsImlhdCI6MTc4MDQ5MjA3NSwidXNlcl9pZCI6ImYzMWFmZDA0LWI5MTMtNGJiZC1hNzUwLTFjYTI3Y2JlZjFhNSJ9.0R49Dq7uNu5jaFpU_821e0N-qmasifGZArZT0kxfVM0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_WEATHER_APP}}/favorites/nairobi",
+							"host": [
+								"{{BASE_URL_WEATHER_APP}}"
+							],
+							"path": [
+								"favorites",
+								"nairobi"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete_favorite",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_WEATHER_APP}}/favorites/nairobi",
+									"host": [
+										"{{BASE_URL_WEATHER_APP}}"
+									],
+									"path": [
+										"favorites",
+										"nairobi"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jun 2026 15:40:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"favorite removed\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "weather",
+			"item": [
+				{
+					"name": "get_weather",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODA1Nzg0NzUsImlhdCI6MTc4MDQ5MjA3NSwidXNlcl9pZCI6ImYzMWFmZDA0LWI5MTMtNGJiZC1hNzUwLTFjYTI3Y2JlZjFhNSJ9.0R49Dq7uNu5jaFpU_821e0N-qmasifGZArZT0kxfVM0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_WEATHER_APP}}/weather/kilifi",
+							"host": [
+								"{{BASE_URL_WEATHER_APP}}"
+							],
+							"path": [
+								"weather",
+								"kilifi"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_weather",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_WEATHER_APP}}/weather/kilifi",
+									"host": [
+										"{{BASE_URL_WEATHER_APP}}"
+									],
+									"path": [
+										"weather",
+										"kilifi"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jun 2026 15:32:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"City\": \"Kilifi\",\n    \"Temperature\": 25.03,\n    \"Condition\": \"broken clouds\",\n    \"Humidity\": 84,\n    \"WindSpeed\": 4.5\n}"
+						}
+					]
+				},
+				{
+					"name": "get_forecast",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODA1Nzg0NzUsImlhdCI6MTc4MDQ5MjA3NSwidXNlcl9pZCI6ImYzMWFmZDA0LWI5MTMtNGJiZC1hNzUwLTFjYTI3Y2JlZjFhNSJ9.0R49Dq7uNu5jaFpU_821e0N-qmasifGZArZT0kxfVM0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_WEATHER_APP}}/forecast/kilifi",
+							"host": [
+								"{{BASE_URL_WEATHER_APP}}"
+							],
+							"path": [
+								"forecast",
+								"kilifi"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_forecast",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_WEATHER_APP}}/forecast/kilifi",
+									"host": [
+										"{{BASE_URL_WEATHER_APP}}"
+									],
+									"path": [
+										"forecast",
+										"kilifi"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Jun 2026 15:32:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "471"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"City\": \"Kilifi\",\n    \"Days\": [\n        {\n            \"Date\": \"2026-06-03\",\n            \"High\": 25.46,\n            \"Low\": 24.09,\n            \"Condition\": \"broken clouds\"\n        },\n        {\n            \"Date\": \"2026-06-04\",\n            \"High\": 28.78,\n            \"Low\": 23.43,\n            \"Condition\": \"overcast clouds\"\n        },\n        {\n            \"Date\": \"2026-06-05\",\n            \"High\": 28.03,\n            \"Low\": 23.47,\n            \"Condition\": \"light rain\"\n        },\n        {\n            \"Date\": \"2026-06-06\",\n            \"High\": 28.79,\n            \"Low\": 24,\n            \"Condition\": \"clear sky\"\n        },\n        {\n            \"Date\": \"2026-06-07\",\n            \"High\": 28.55,\n            \"Low\": 23.83,\n            \"Condition\": \"broken clouds\"\n        },\n        {\n            \"Date\": \"2026-06-08\",\n            \"High\": 28.35,\n            \"Low\": 24.05,\n            \"Condition\": \"scattered clouds\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODA1Nzg0NzUsImlhdCI6MTc4MDQ5MjA3NSwidXNlcl9pZCI6ImYzMWFmZDA0LWI5MTMtNGJiZC1hNzUwLTFjYTI3Y2JlZjFhNSJ9.0R49Dq7uNu5jaFpU_821e0N-qmasifGZArZT0kxfVM0",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL_WEATHER_APP",
+			"value": ""
+		}
+	]
+}
