@@ -22,25 +22,6 @@ A full-stack weather application built with Go and Next.js. Search for weather b
 - [golang-migrate CLI](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)
 - OpenWeatherMap API key (free at openweathermap.org)
 
----
-
-## Project Structure
-
-my-weather-app/
-├── backend/
-│ ├── cmd/
-│ ├── internal/
-│ ├── migrations/
-│ ├── tests/
-│ ├── .env.example
-│ └── go.mod
-└── frontend/
-├── src/
-├── .env.local.example
-└── package.json
-
----
-
 ## Backend Setup
 
 ### 1. Environment Variables
